@@ -1,18 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(title: Text('StrutFit Button Example')),
         body: Center(
-          child: Text('Hello World!'),
+          child: Container(
+            width: 800, // Set button width
+            height: 120, // Set button height
+            child: AndroidView(
+              viewType: 'strutfit_button_view',
+              layoutDirection: TextDirection.ltr,
+              creationParams: {
+                'organizationId': 1,
+                'productCode': 'TestProduct',
+                'sizeUnit': 'US',
+                'apparelSizeUnit': 'US',
+                'width': 800,
+                'height': 120,
+              },
+              creationParamsCodec: const StandardMessageCodec(),
+            ),
+          ),
         ),
       ),
     );

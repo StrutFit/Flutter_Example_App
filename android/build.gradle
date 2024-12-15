@@ -2,6 +2,8 @@ allprojects {
     repositories {
         google()
         mavenCentral()
+        // SFCODE //
+        maven { url 'https://jitpack.io' }
     }
 }
 
