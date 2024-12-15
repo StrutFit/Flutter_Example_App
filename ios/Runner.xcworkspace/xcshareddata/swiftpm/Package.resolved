@@ -1,0 +1,15 @@
+{
+  "originHash" : "61b4b08dac806a3ed39d927fa896e8ef192809f903eb0615d1d559c43a71ff44",
+  "pins" : [
+    {
+      "identity" : "iossdk",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/StrutFit/iOSSDK",
+      "state" : {
+        "revision" : "1f5586644b1bee3b4802c9fd1e4598949e25b4b2",
+        "version" : "7.0.0"
+      }
+    }
+  ],
+  "version" : 3
+}

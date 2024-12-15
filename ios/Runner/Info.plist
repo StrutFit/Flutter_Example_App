@@ -45,5 +45,11 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
+	<!-- SFCODE -->
+	<key>NSCameraUsageDescription</key>
+	<string>We need camera access to measure your feet for a personalized fit.</string>
+
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>We need access to your photo library to upload images for size recommendations.</string>
 </dict>
 </plist>
