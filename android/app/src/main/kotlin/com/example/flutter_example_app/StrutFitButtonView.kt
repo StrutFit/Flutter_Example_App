@@ -18,35 +18,40 @@ class StrutFitButtonPlatformView(
     private val strutFitButtonView: StrutFitButtonView = StrutFitButtonView(context)
 
     init {
-        // Extract parameters from creationParams
-        val organizationId = creationParams?.get("organizationId") as? Int ?: 1
-        val productCode = creationParams?.get("productCode") as? String ?: "TestProduct"
-        val sizeUnit = creationParams?.get("sizeUnit") as? String ?: "US"
-        val apparelSizeUnit = creationParams?.get("apparelSizeUnit") as? String ?: "US"
-        // val width = (creationParams?.get("width") as? Int) ?: 800
-        // val height = (creationParams?.get("height") as? Int) ?: 120
+        val organizationId = creationParams?.get("organizationId") as? Int ?: 0
+        val productCode = creationParams?.get("productCode") as? String ?: ""
+        val sizeUnit = creationParams?.get("sizeUnit") as? String ?: ""
+        val apparelSizeUnit = creationParams?.get("apparelSizeUnit") as? String ?: ""
+
+        strutFitButtonView.id = View.generateViewId()
+        strutFitButtonView.visibility = View.GONE
 
         // Log.d("StrutFitButton", "Params: organizationId=$organizationId, productCode=$productCode")
         // Log.e("StrutFitButton", "strutFitButtonView: " + strutFitButtonView.id)
         // Log.e("StrutFitButton", "findViewById: " + activity.findViewById(strutFitButtonView.id))
-        val packageName = context.packageName
-        Log.d("MainActivity", "Package Name: $packageName")
+        // val packageName = context.packageName
+        // Log.d("MainActivity", "Package Name: $packageName")
 
-        // Customize layout
-        // strutFitButtonView.layoutParams = FrameLayout.LayoutParams(width, height)
-        strutFitButtonView.id = View.generateViewId()
-        strutFitButtonView.visibility = View.GONE
+        if (organizationId == 0 || 
+            productCode == ""
+        ) {
+            Log.e("StrutFitButton", "Required parameters are missing or null. Aborting view initialization.")
+            Log.e("StrutFitButton", "Parameters received: $creationParams")
 
-        // Initialize the StrutFitButton
-        strutFitButtonView.post {
-            StrutFitButton(
-                activity,
-                strutFitButtonView.id,
-                organizationId,
-                productCode,
-                sizeUnit,
-                apparelSizeUnit
-            )
+        } else {
+            // Customize layout
+            // Initialize the StrutFitButton
+            strutFitButtonView.post {
+                StrutFitButton(
+                    activity,
+                    strutFitButtonView.id,
+                    organizationId,
+                    productCode,
+                    sizeUnit,
+                    apparelSizeUnit
+                )
+            }
+
         }
     }
 

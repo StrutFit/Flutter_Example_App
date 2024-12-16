@@ -103,8 +103,6 @@ class _ProductDetailPageState extends State<ProductDetailPage> {
       'productCode': product['productCode'],
       'sizeUnit': 'US',
       'apparelSizeUnit': 'US',
-      // 'width': 800,
-      // 'height': 120,
     };
 
     print('🔍 Creation Params for ${product['name']}: $creationParams');
