@@ -1,27 +1,36 @@
 import UIKit
 import Flutter
-import StrutFitButtonSDK
 
 @main
 @objc class AppDelegate: FlutterAppDelegate {
-  override func application(
-    _ application: UIApplication,
-    didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-  ) -> Bool {
-
-    let bundleIdentifier = Bundle.main.bundleIdentifier ?? "No Bundle Identifier"
-    print("📦 Bundle Identifier: \(bundleIdentifier)") // Log the bundle identifier
     
-    let controller = window?.rootViewController as! FlutterViewController
-    guard let registrar = controller.registrar(forPlugin: "strutfit_button_view") else {
-        print("Could not find registrar for strutfit_button_view")
-        fatalError("Could not find registrar for strutfit_button_view")
+    // MARK: - Properties
+    private var buttonManager: StrutFitButtonManager!
+    private var trackingManager: StrutFitTrackingManager!
+    
+    // MARK: - Application Lifecycle
+    override func application(
+        _ application: UIApplication,
+        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
+    ) -> Bool {
+        
+        guard let controller = getFlutterViewController() else {
+            fatalError("❌ Could not find FlutterViewController")
+        }
+        
+        // Initialize managers
+        buttonManager = StrutFitButtonManager(controller: controller)
+        trackingManager = StrutFitTrackingManager(controller: controller)
+        
+        return super.application(application, didFinishLaunchingWithOptions: launchOptions)
     }
-
-    // Register the platform view factory for "strutfit_button_view"
-    registrar.register(StrutFitButtonViewFactory(messenger: registrar.messenger()), withId: "strutfit_button_view")
     
-    print("🔥 View registered successfully")
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
+
+    private func getFlutterViewController() -> FlutterViewController? {
+        guard let controller = window?.rootViewController as? FlutterViewController else {
+            print("❌ Could not cast rootViewController to FlutterViewController")
+            return nil
+        }
+        return controller
+    }
 }
