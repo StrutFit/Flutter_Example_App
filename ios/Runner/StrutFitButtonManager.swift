@@ -86,6 +86,7 @@ public class StrutFitButtonView: NSObject, FlutterPlatformView {
         let hostingController = UIHostingController(rootView: buttonView)
         hostingController.view.frame = CGRect(x: 0, y: 0, width: frame.width, height: frame.height)
         hostingController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        hostingController.view.backgroundColor = .clear
         _view.addSubview(hostingController.view)
     }
 
