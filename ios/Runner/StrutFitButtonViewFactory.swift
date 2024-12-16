@@ -27,6 +27,6 @@ class StrutFitButtonViewFactory: NSObject, FlutterPlatformViewFactory {
             print("❌ No arguments received in Factory")
         }
 
-        return iOSStrutFitButtonView(frame: frame, viewIdentifier: viewId, arguments: args)
+        return StrutFitButtonView(frame: frame, viewIdentifier: viewId, arguments: args)
     }
 }

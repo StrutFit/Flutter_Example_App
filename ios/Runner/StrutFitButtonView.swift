@@ -4,7 +4,7 @@ import UIKit
 import SwiftUI
 import StrutFitButtonSDK
 
-public class iOSStrutFitButtonView: NSObject, FlutterPlatformView {
+public class StrutFitButtonView: NSObject, FlutterPlatformView {
     private var _view: UIView
 
     public init(frame: CGRect, viewIdentifier viewId: Int64, arguments args: Any?) {
@@ -20,15 +20,11 @@ public class iOSStrutFitButtonView: NSObject, FlutterPlatformView {
         let sizeUnit = creationParams["sizeUnit"] as? String ?? ""
         let apparelSizeUnit = creationParams["apparelSizeUnit"] as? String ?? ""
 
-        // let productCode = "TestProduct"
-        // let organizationId = 1
-
-
         // Create the SwiftUI-based StrutFitButtonView
-        let buttonView = StrutFitButtonView(
-            productCode: productCode, 
-            organizationUnitId: organizationId, 
-            sizeUnit: sizeUnit, 
+        let buttonView = StrutFitButtonSDK.StrutFitButtonView(
+            productCode: productCode,
+            organizationUnitId: organizationId,
+            sizeUnit: sizeUnit,
             apparelSizeUnit: apparelSizeUnit
         )
 
