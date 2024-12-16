@@ -23,8 +23,8 @@ class StrutFitButtonPlatformView(
         val productCode = creationParams?.get("productCode") as? String ?: "TestProduct"
         val sizeUnit = creationParams?.get("sizeUnit") as? String ?: "US"
         val apparelSizeUnit = creationParams?.get("apparelSizeUnit") as? String ?: "US"
-        val width = (creationParams?.get("width") as? Int) ?: 800
-        val height = (creationParams?.get("height") as? Int) ?: 120
+        // val width = (creationParams?.get("width") as? Int) ?: 800
+        // val height = (creationParams?.get("height") as? Int) ?: 120
 
         // Log.d("StrutFitButton", "Params: organizationId=$organizationId, productCode=$productCode")
         // Log.e("StrutFitButton", "strutFitButtonView: " + strutFitButtonView.id)
@@ -33,22 +33,21 @@ class StrutFitButtonPlatformView(
         Log.d("MainActivity", "Package Name: $packageName")
 
         // Customize layout
-        strutFitButtonView.layoutParams = FrameLayout.LayoutParams(width, height)
+        // strutFitButtonView.layoutParams = FrameLayout.LayoutParams(width, height)
         strutFitButtonView.id = View.generateViewId()
-
-        // Add the button view to the root layout
-        val rootView = activity.findViewById<FrameLayout>(android.R.id.content)
-        rootView.addView(strutFitButtonView)
+        strutFitButtonView.visibility = View.GONE
 
         // Initialize the StrutFitButton
-        StrutFitButton(
-            activity, 
-            strutFitButtonView.id, 
-            organizationId, 
-            productCode, 
-            sizeUnit, 
-            apparelSizeUnit
-        )
+        strutFitButtonView.post {
+            StrutFitButton(
+                activity,
+                strutFitButtonView.id,
+                organizationId,
+                productCode,
+                sizeUnit,
+                apparelSizeUnit
+            )
+        }
     }
 
     override fun getView(): android.view.View = strutFitButtonView
