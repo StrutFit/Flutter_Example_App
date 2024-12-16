@@ -12,13 +12,13 @@ class StrutFitTrackingHandler(private val context: Context) {
     fun registerOrderForStrutFit(args: Map<String, Any>, result: MethodChannel.Result) {
         try {
             // Extract order details from the Flutter arguments
-            val organizationUnitId = args["organizationUnitId"] as Int
+            val organizationId = args["organizationId"] as Int
             val orderReference = args["orderReference"] as String
             val orderValue = args["orderValue"] as Double
             val currencyCode = args["currencyCode"] as String
             val userEmail = args["userEmail"] as String
 
-            val strutFitTracking = StrutFitTracking(context, organizationUnitId)
+            val strutFitTracking = StrutFitTracking(context, organizationId)
             val items = ArrayList<ConversionItem>()
 
             // Extract product items from the arguments

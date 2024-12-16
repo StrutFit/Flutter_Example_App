@@ -44,7 +44,7 @@ class ProductListPage extends StatelessWidget {
 
   Future<void> triggerTrackingPixel() async {
     final orderDetails = {
-      'organizationUnitId': 5,
+      'organizationId': 5,
       'orderReference': 'ORDER-${DateTime.now().millisecondsSinceEpoch}',
       'orderValue': 399.99,
       'currencyCode': 'USD',

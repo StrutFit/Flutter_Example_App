@@ -15,15 +15,13 @@ public class iOSStrutFitButtonView: NSObject, FlutterPlatformView {
         // Extract the creation parameters from the Dart side
         guard let creationParams = args as? [String: Any] else { return }
 
-        let productCode = creationParams["productCode"] as? String ?? "TestProduct"
-        let organizationId = creationParams["organizationUnitId"] as? Int ?? 1
-        let sizeUnit = creationParams["sizeUnit"] as? String ?? "US"
-        let apparelSizeUnit = creationParams["apparelSizeUnit"] as? String ?? "US"
-        
-//        let productCode = "TestProduct"
-//        let organizationId =  1
-//        let sizeUnit = "US"
-//        let apparelSizeUnit = "US"
+        let productCode = creationParams["productCode"] as? String ?? ""
+        let organizationId = creationParams["organizationId"] as? Int ?? 0
+        let sizeUnit = creationParams["sizeUnit"] as? String ?? ""
+        let apparelSizeUnit = creationParams["apparelSizeUnit"] as? String ?? ""
+
+        // let productCode = "TestProduct"
+        // let organizationId = 1
 
 
         // Create the SwiftUI-based StrutFitButtonView
