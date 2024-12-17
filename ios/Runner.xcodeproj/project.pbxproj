@@ -685,8 +685,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/StrutFit/iOSSDK";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
 			};
 		};
 		1ED08E432D0E6E660057B573 /* XCRemoteSwiftPackageReference "iOSSDK" */ = {
