@@ -2,7 +2,7 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        // SFCODE //
+        // STRUTFIT_CONFIG_CODE //
         maven { url 'https://jitpack.io' }
     }
 }

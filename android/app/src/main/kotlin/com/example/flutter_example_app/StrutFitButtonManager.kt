@@ -51,6 +51,9 @@ class StrutFitButtonManager(
         private val strutFitButtonView: StrutFitButtonView = StrutFitButtonView(context)
 
         init {
+            strutFitButtonView.id = View.generateViewId()
+            strutFitButtonView.visibility = View.GONE
+
             val organizationId = creationParams?.get("organizationId") as? Int ?: 0
             val productCode = creationParams?.get("productCode") as? String ?: ""
             val sizeUnit = creationParams?.get("sizeUnit") as? String
@@ -59,8 +62,6 @@ class StrutFitButtonManager(
             if (organizationId == 0 || productCode.isEmpty()) {
                 Log.e("StrutFitButtonPlatformView", "❌ Missing required parameters for StrutFit Button.")
             } else {
-                strutFitButtonView.id = View.generateViewId()
-                strutFitButtonView.visibility = View.GONE
                 strutFitButtonView.post {
                     StrutFitButton(
                         activity, // Pass activity instead of context

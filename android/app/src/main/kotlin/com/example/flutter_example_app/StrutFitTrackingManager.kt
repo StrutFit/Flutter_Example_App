@@ -44,7 +44,7 @@ class StrutFitTrackingManager(
                 val orderReference = args["orderReference"] as String
                 val orderValue = args["orderValue"] as Double
                 val currencyCode = args["currencyCode"] as String
-                val userEmail = args["userEmail"] as String
+                val userEmail = args["userEmail"] as String?
 
                 val strutFitTracking = StrutFitTracking(activity, organizationId)
                 val items = ArrayList<ConversionItem>()

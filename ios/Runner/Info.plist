@@ -45,7 +45,7 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-	<!-- SFCODE -->
+	<!-- STRUTFIT_CONFIG_CODE  -->
 	<key>NSCameraUsageDescription</key>
 	<string>We need camera access to measure your feet for a personalized fit.</string>
 

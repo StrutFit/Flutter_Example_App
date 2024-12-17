@@ -44,17 +44,19 @@ class ProductListPage extends StatelessWidget {
 
   Future<void> triggerTrackingPixel() async {
     final orderDetails = {
-      'organizationId': 5,
-      'orderReference': 'ORDER-${DateTime.now().millisecondsSinceEpoch}',
-      'orderValue': 399.99,
+      'organizationId': 5, // your organization id
+      'orderReference':
+          'ORDER-${DateTime.now().millisecondsSinceEpoch}', // the unique order reference for the order (you should already have something like this for your order tracking)
+      'orderValue': 399.99, // total order value
       'currencyCode': 'USD',
-      'userEmail': 'customer@example.com',
+      'userEmail': 'customer@example.com', // optional
       'items': products.map((product) {
         return {
-          'productIdentifier': product['productCode'],
-          'price': 99.99,
+          'productIdentifier':
+              product['productCode'], // the product's unique code
+          'price': 99.99, // price per item purchased
           'quantity': 1,
-          'size': '10 US',
+          'size': '10 US', // can be split into size and sizeUnit if preferred
         };
       }).toList()
     };

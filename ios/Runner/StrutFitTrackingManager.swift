@@ -67,7 +67,7 @@ class StrutFitTrackingHandler {
                 let orderReference = args["orderReference"] as? String,
                 let orderValue = args["orderValue"] as? Double,
                 let currencyCode = args["currencyCode"] as? String,
-                let userEmail = args["userEmail"] as? String,
+                let userEmail = args["userEmail"] as? String?,
                 let itemsArray = args["items"] as? [[String: Any]]
             else {
                 result(FlutterError(code: "INVALID_ARGS", message: "Missing required arguments", details: nil))

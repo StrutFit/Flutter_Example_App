@@ -73,8 +73,13 @@ public class StrutFitButtonView: NSObject, FlutterPlatformView {
 
         let productCode = creationParams["productCode"] as? String ?? ""
         let organizationId = creationParams["organizationId"] as? Int ?? 0
-        let sizeUnit = creationParams["sizeUnit"] as? String ?? ""
-        let apparelSizeUnit = creationParams["apparelSizeUnit"] as? String ?? ""
+        let sizeUnit = creationParams["sizeUnit"] as? String? ?? nil
+        let apparelSizeUnit = creationParams["apparelSizeUnit"] as? String? ?? nil
+        
+        if (organizationId == 0 || productCode.isEmpty) {
+            print("❌ Missing required parameters for StrutFit Button.")
+            return;
+        }
 
         let buttonView = StrutFitButtonSDK.StrutFitButtonView(
             productCode: productCode,

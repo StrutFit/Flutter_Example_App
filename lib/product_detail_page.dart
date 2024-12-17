@@ -10,10 +10,10 @@ class ProductDetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final creationParams = {
-      'organizationId': 5,
-      'productCode': product['productCode'],
-      'sizeUnit': 'US',
-      'apparelSizeUnit': 'US',
+      'organizationId': 5, // Your organization id
+      'productCode': product['productCode'], // the product's unique code
+      'sizeUnit': 'US', // optional
+      'apparelSizeUnit': 'US', //optional
     };
 
     return Scaffold(
@@ -88,6 +88,10 @@ class ProductDetailPage extends StatelessWidget {
                             },
                             creationParamsCodec: const StandardMessageCodec(),
                           ),
+                  ),
+                  Text(
+                    'Page continues...',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
