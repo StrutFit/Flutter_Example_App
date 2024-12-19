@@ -686,7 +686,7 @@
 			repositoryURL = "https://github.com/StrutFit/iOSSDK";
 			requirement = {
 				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
+				minimumVersion = 7.1.0;
 			};
 		};
 		1ED08E432D0E6E660057B573 /* XCRemoteSwiftPackageReference "iOSSDK" */ = {

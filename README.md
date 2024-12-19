@@ -94,7 +94,7 @@ You will need to make changes in the following files:
  - **app/build.gradle:** Ensure the minSdk is 24 or higher & add the following dependencies:
     ```gradle
     dependencies {
-      implementation 'com.github.StrutFit:AndroidSDK:7.0.0'
+      implementation 'com.github.StrutFit:AndroidSDK:7.1.0'
       implementation 'androidx.appcompat:appcompat:1.3.1'
       implementation 'com.squareup.okhttp3:okhttp:4.9.0'
       implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
@@ -145,7 +145,7 @@ You will need to make changes in the following file:
   	<key>NSPhotoLibraryUsageDescription</key>
   	<string>We need access to your photo library to upload images for size recommendations.</string>
     ```
-    You will also need to import the **StrutFit/iOSSDK** package. The easiest way to do this is to open the **ios** folder in XCode and click on the Runner project. Then under Package Dependencies, add a new package. You can find the StrutFit SDK by entering https://github.com/StrutFit/iOSSDK into the search box. Then ensure you are getting version **7.0.0** and that you are adding it to the Runner target. 
+    You will also need to import the **StrutFit/iOSSDK** package. The easiest way to do this is to open the **ios** folder in XCode and click on the Runner project. Then under Package Dependencies, add a new package. You can find the StrutFit SDK by entering https://github.com/StrutFit/iOSSDK into the search box. Then ensure you are getting version **7.1.0** and that you are adding it to the Runner target. 
     Also note down the product bundle identifier, which can be found in the Build Settings of the Runner target in XCode (this is com.example.flutterExampleApp in our example).
 
 2. Copy and paste the swift files from the **Runner** folder into the same folder in your Flutter application.  
