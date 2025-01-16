@@ -90,18 +90,10 @@ In the following steps we will be working in the **android** folder of your Flut
 1. First, you will need to add some configuration.  
 You can search for **STRUTFIT_CONFIG_CODE** in this example app see what we have done.  
 You will need to make changes in the following files:
- - **build.gradle:** Add the maven { url 'https://jitpack.io' } repository
- - **app/build.gradle:** Ensure the minSdk is 24 or higher & add the following dependencies:
+ - **app/build.gradle:** Ensure the minSdk is 24 or higher & add the following dependency - fit.strut:strutfit-android-sdk at version **8.0.0**:
     ```gradle
     dependencies {
-      implementation 'com.github.StrutFit:AndroidSDK:7.1.0'
-      implementation 'androidx.appcompat:appcompat:1.3.1'
-      implementation 'com.squareup.okhttp3:okhttp:4.9.0'
-      implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
-      implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-      implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-      implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-      implementation 'io.reactivex.rxjava3:rxjava:3.1.3'
+      implementation 'fit.strut:strutfit-android-sdk:8.0.0'
     }
     ```
  - **app/src/main/AndroidManifest.xml:** Add the following feature and permissions:
@@ -174,7 +166,6 @@ That should be all you need to test your application. You will want to check the
 Once you are happy with your testing and you are going to release your changes to production, let your account manager know so that they can make sure any dummy orders you have created so far are ignored going forward.   
 
 ## Notes on current limitations: 
-- The StrutFit Android SDK does not currently expose its dependencies properly. That is why you need to include the extra dependencies in your build.gradle file.
 - The StrutFit button must have a fixed height and width (both Android and iOS). This also means that when the StrutFit button is not displayed you will end up with empty space where the button would usually be.
 
 If you experience any issues, please speak with your account manager, or contact us at dev@strut.fit.
