@@ -2,8 +2,6 @@ allprojects {
     repositories {
         google()
         mavenCentral()
-        // STRUTFIT_CONFIG_CODE //
-        maven { url 'https://jitpack.io' }
     }
 }
 

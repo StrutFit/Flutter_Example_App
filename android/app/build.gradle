@@ -43,14 +43,7 @@ android {
 
 // STRUTFIT_CONFIG_CODE  //
 dependencies {
-    implementation 'com.github.StrutFit:AndroidSDK:7.1.0'
-    implementation 'androidx.appcompat:appcompat:1.3.1'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava3:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
-    implementation 'io.reactivex.rxjava3:rxjava:3.1.3'
+    implementation 'fit.strut:strutfit-android-sdk:8.0.0'
 }
 
 flutter {
