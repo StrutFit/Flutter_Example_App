@@ -90,10 +90,10 @@ In the following steps we will be working in the **android** folder of your Flut
 1. First, you will need to add some configuration.  
 You can search for **STRUTFIT_CONFIG_CODE** in this example app see what we have done.  
 You will need to make changes in the following files:
- - **app/build.gradle:** Ensure the minSdk is 24 or higher & add the following dependency - fit.strut:strutfit-android-sdk at version **8.0.0**:
+ - **app/build.gradle:** Ensure the minSdk is 24 or higher & add the following dependency - fit.strut:strutfit-android-sdk at version **8.1.0**:
     ```gradle
     dependencies {
-      implementation 'fit.strut:strutfit-android-sdk:8.0.0'
+      implementation 'fit.strut:strutfit-android-sdk:8.1.0'
     }
     ```
  - **app/src/main/AndroidManifest.xml:** Add the following feature and permissions:
@@ -137,7 +137,7 @@ You will need to make changes in the following file:
   	<key>NSPhotoLibraryUsageDescription</key>
   	<string>We need access to your photo library to upload images for size recommendations.</string>
     ```
-    You will also need to import the **StrutFit/iOSSDK** package. The easiest way to do this is to open the **ios** folder in XCode and click on the Runner project. Then under Package Dependencies, add a new package. You can find the StrutFit SDK by entering https://github.com/StrutFit/iOSSDK into the search box. Then ensure you are getting version **7.1.0** and that you are adding it to the Runner target. 
+    You will also need to import the **StrutFit/iOSSDK** package. The easiest way to do this is to open the **ios** folder in XCode and click on the Runner project. Then under Package Dependencies, add a new package. You can find the StrutFit SDK by entering https://github.com/StrutFit/iOSSDK into the search box. Then ensure you are getting version **7.2.0** and that you are adding it to the Runner target. 
     Also note down the product bundle identifier, which can be found in the Build Settings of the Runner target in XCode (this is com.example.flutterExampleApp in our example).
 
 2. Copy and paste the swift files from the **Runner** folder into the same folder in your Flutter application.  
