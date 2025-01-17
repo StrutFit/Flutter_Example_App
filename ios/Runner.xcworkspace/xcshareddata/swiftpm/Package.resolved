@@ -6,8 +6,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/StrutFit/iOSSDK",
       "state" : {
-        "revision" : "9b8c533beb48912427abd832d5256ccdaa0aa05d",
-        "version" : "7.1.0"
+        "revision" : "144d7a02b9075b03079f49a0dc97434478173d34",
+        "version" : "7.2.0"
       }
     }
   ],
