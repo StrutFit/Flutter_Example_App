@@ -43,7 +43,7 @@ android {
 
 // STRUTFIT_CONFIG_CODE  //
 dependencies {
-    implementation 'fit.strut:strutfit-android-sdk:8.1.0'
+    implementation 'fit.strut:strutfit-android-sdk:8.2.0'
 }
 
 flutter {

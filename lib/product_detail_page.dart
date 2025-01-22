@@ -14,6 +14,8 @@ class ProductDetailPage extends StatelessWidget {
       'productCode': product['productCode'], // the product's unique code
       'sizeUnit': 'US', // optional
       'apparelSizeUnit': 'US', //optional
+      'productName': product['name'], //optional
+      'productImageURL': product['imageUrl'] //optional
     };
 
     return Scaffold(
@@ -64,10 +66,11 @@ class ProductDetailPage extends StatelessWidget {
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(height: 10),
-                  Container(
-                    width: 500, // Width of StrutFit button
-                    height: 60, // Height of StrutFit button
-                    alignment: Alignment.center,
+                  ConstrainedBox(
+                    constraints: BoxConstraints(
+                      maxWidth: 500, // Width of StrutFit button
+                      maxHeight: 60, // Height of StrutFit button
+                    ),
                     child: Platform.isAndroid
                         ? AndroidView(
                             key: UniqueKey(),

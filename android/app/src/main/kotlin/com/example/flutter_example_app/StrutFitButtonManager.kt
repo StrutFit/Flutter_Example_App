@@ -56,8 +56,10 @@ class StrutFitButtonManager(
 
             val organizationId = creationParams?.get("organizationId") as? Int ?: 0
             val productCode = creationParams?.get("productCode") as? String ?: ""
-            val sizeUnit = creationParams?.get("sizeUnit") as? String
-            val apparelSizeUnit = creationParams?.get("apparelSizeUnit") as? String
+            val sizeUnit = creationParams?.get("sizeUnit") as? String ?: ""
+            val apparelSizeUnit = creationParams?.get("apparelSizeUnit") as? String ?: ""
+            val productName = creationParams?.get("productName") as? String ?: ""
+            val productImageURL = creationParams?.get("productImageURL") as? String ?: ""
 
             if (organizationId == 0 || productCode.isEmpty()) {
                 Log.e("StrutFitButtonPlatformView", "❌ Missing required parameters for StrutFit Button.")
@@ -69,7 +71,9 @@ class StrutFitButtonManager(
                         organizationId,
                         productCode,
                         sizeUnit,
-                        apparelSizeUnit
+                        apparelSizeUnit,
+                        productName,
+                        productImageURL
                     )
                 }
             }

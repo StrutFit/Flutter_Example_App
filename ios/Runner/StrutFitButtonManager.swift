@@ -75,6 +75,8 @@ public class StrutFitButtonView: NSObject, FlutterPlatformView {
         let organizationId = creationParams["organizationId"] as? Int ?? 0
         let sizeUnit = creationParams["sizeUnit"] as? String? ?? nil
         let apparelSizeUnit = creationParams["apparelSizeUnit"] as? String? ?? nil
+        let productName = creationParams["productName"] as? String ?? ""
+        let productImageURL = creationParams["productImageURL"] as? String ?? ""
         
         if (organizationId == 0 || productCode.isEmpty) {
             print("❌ Missing required parameters for StrutFit Button.")
@@ -85,7 +87,9 @@ public class StrutFitButtonView: NSObject, FlutterPlatformView {
             productCode: productCode,
             organizationUnitId: organizationId,
             sizeUnit: sizeUnit,
-            apparelSizeUnit: apparelSizeUnit
+            apparelSizeUnit: apparelSizeUnit,
+            productName: productName,
+            productImageURL: productImageURL
         )
 
         let hostingController = UIHostingController(rootView: buttonView)
